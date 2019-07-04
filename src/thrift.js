@@ -16,10 +16,11 @@ import opentracing from 'opentracing';
 import path from 'path';
 import { Thrift } from 'thriftrw';
 import Utils from './util.js';
+import * as thriftSpec from './thrift_spec.js';
 
 export default class ThriftUtils {
   static _thrift = new Thrift({
-    source: fs.readFileSync(path.join(__dirname, './jaeger-idl/thrift/jaeger.thrift'), 'ascii'),
+    source: thriftSpec.spec,
     allowOptionalArguments: true,
   });
   static emptyBuffer: Buffer = new Buffer([0, 0, 0, 0, 0, 0, 0, 0]);

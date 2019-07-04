@@ -17,6 +17,7 @@ import path from 'path';
 import { Thrift } from 'thriftrw';
 import NullLogger from '../logger.js';
 import SenderUtils from './sender_utils.js';
+import * as thriftSpec from '../thrift_spec.js';
 
 const HOST = 'localhost';
 const PORT = 6832;
@@ -52,7 +53,7 @@ export default class UDPSender {
       allowFilesystemAccess: true,
     });
     this._jaegerThrift = new Thrift({
-      source: fs.readFileSync(path.join(__dirname, '../jaeger-idl/thrift/jaeger.thrift'), 'ascii'),
+      source: thriftSpec.spec,
       allowOptionalArguments: true,
     });
     this._totalSpanBytes = 0;
