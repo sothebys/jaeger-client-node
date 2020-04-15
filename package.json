@@ -1,6 +1,6 @@
 {
   "name": "jaeger-client",
-  "version": "3.17.3dev",
+  "version": "3.17.3-sothebysdev",
   "description": "Jaeger binding for OpenTracing API for Node.js",
   "engines": {
     "node": ">=0.10"
@@ -13,8 +13,14 @@
     "type": "git",
     "url": "git://github.com/jaegertracing/jaeger-client-node.git"
   },
-  "files": ["dist/src"],
-  "contributors": ["Yuri Shkuro <ys@uber.com>", "Won Jun Jang <wjang@uber.com>", "Jaeger Authors <jaeger-tracing@googlegroups.com>"],
+  "files": [
+    "dist/src"
+  ],
+  "contributors": [
+    "Yuri Shkuro <ys@uber.com>",
+    "Won Jun Jang <wjang@uber.com>",
+    "Jaeger Authors <jaeger-tracing@googlegroups.com>"
+  ],
   "dependencies": {
     "node-int64": "^0.4.0",
     "opentracing": "^0.13.0",
@@ -78,6 +84,9 @@
     "show-cover": "open coverage/lcov-report/index.html"
   },
   "lint-staged": {
-    "*.{js,json,md}": ["prettier --write", "git add"]
+    "*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
